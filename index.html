@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/voice.css">
+	<link rel="stylesheet" href="css/style.css">
+		<script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.traffic&lang=ru-RU" type="text/javascript"></script>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1>Игра в города</h1>
+			<a href="https://ru.wikipedia.org/wiki/Города_(игра)" target="_blank">правила</a>
+		</div>
+	</header>
+	<div class="container">
+		<main>
+			<div class="human">
+				<label for="text">
+			<input type="text" id="humanCity" placeholder="Введите название города...">
+			<button id="btn">Enter</button>
+			<button id="start_button">Voise</button>
+			<button id="restart" class="restart" >The end</button>
+			</label>
+				<textarea disabled cols="1005" id="humanCities"></textarea>
+			</div>
+			<textarea disabled id="compCities"></textarea>
+		</main>
+		<div class="block">
+			<div id="map" style="width:600px; height:650px"></div>
+		</div>
+		<div class="result">
+			<textarea name="out" id="outRes" class="name" disabled></textarea>
+
+			<div id="info">
+				<p id="info_start">Click on the microphone icon and begin speaking.</p>
+				<p id="info_speak_now">Speak now.</p>
+				<p id="info_no_speech">No speech was detected. You may need to adjust your
+					<a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892" target="_blank">
+      microphone settings</a>.</p>
+				<p id="info_no_microphone" style="display:none">
+					No microphone was found. Ensure that a microphone is installed and that
+					<a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892" target="_blank">
+    microphone settings</a> are configured correctly.</p>
+				<p id="info_allow">Click the "Allow" button above to enable your microphone.</p>
+				<p id="info_denied">Permission to use microphone was denied.</p>
+				<p id="info_blocked">Permission to use microphone is blocked. To change, go to chrome://settings/contentExceptions#media-stream</p>
+				<p id="info_upgrade">Web Speech API is not supported by this browser. Upgrade to <a href="//www.google.com/chrome" target="_blank">Chrome</a> version 25 or later.</p>
+			</div>
+		</div>
+	</div>
+	<div class="center">
+		<select id="select_language"></select> 
+		<select id="select_dialect"></select>
+	</div>
+	<script src="js/controls.js"></script>
+	<script src="js/SpeechAPI.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</body>
+</html>
